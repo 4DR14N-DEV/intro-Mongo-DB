@@ -1,0 +1,10 @@
+use("pp_store");
+
+db.inventory.updateMany(
+  { qty: { $ne: 20 } },        //Query con operadores de consulta
+  {
+    $inc: {                     //Update con operador de actualizacion
+      qty: 10
+    }
+  }
+)

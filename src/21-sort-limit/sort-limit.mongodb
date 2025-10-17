@@ -1,0 +1,13 @@
+use("sample_training");
+
+/* Sort() & limit() =
+sort() y limit() son métodos de consulta en MongoDB que se usan para controlar los resultados. sort() ordena los documentos en una colección según un campo específico, mientras que limit() restringe el número de documentos que se devuelve*/
+
+// sort()  == 1 = 0 - 10 / A - Z ==
+// -1 = 10 - 0 / Z - A
+db.zips.find({ pop: { $gte: 100 } })
+     .sort({ pop: -1 })       //Trae los datos en orden ascendente o descendente
+     .limit(2);               //Trae los dos documentos con mayor denseida poblacional, segun el caso
+
+
+

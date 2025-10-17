@@ -1,0 +1,35 @@
+use("Adrian_store");
+
+db.products.drop();            //Drop vacia toda la coleccion - elimina todos los datos
+
+db.products.insertMany([
+  {
+    _id: 1,
+    name: "PC Gamer",
+    price: "7'000.000"
+  },
+  {
+    _id: 2,
+    name: "Monitor QLED",
+    price: "5'000.000"
+  },
+  {
+    _id: 3,
+    name: "Silla Gamer X5000",
+    price: "3'500.000"
+  },
+  {
+    _id: 4,
+    name: "Cascos By Boss",
+    price: "500.000"
+  },
+  {
+    _id: 5,
+    name: "Mouse Sensi Click",
+    price: "200.000"
+  },
+]), {
+  ordered: false          //Se haran los inserts, asi esten generando errores
+};
+
+db.products.find();

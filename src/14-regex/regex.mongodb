@@ -1,0 +1,12 @@
+use("pl_store");
+
+/* $regex (Expresion regular) 
+  secuencia de caracteres que define un patrón de búsqueda para manipular texto. Se usa para validar datos, buscar y reemplazar texto, y extraer información específica de cadenas de caracteres de manera eficiente. Por ejemplo, se pueden crear regex para buscar patrones como números de teléfono o direcciones de correo electrónico. 
+*/
+
+// db.inventory.find({ "item.description": "Single line description." });
+// db.inventory.find({ "item.description": { $regex: /line/ } });    //'//' Indica el valor a buscar, debe ir dentro de  '//'
+// db.inventory.find({ "item.description": { $regex: /LINE/i } });  //Sensitive case (devuelve mayusculas o minusculas. en este caso el uso correcto es agregar 'i' desdepues del valor dentro de los '//' ( /line/i )).
+// db.inventory.find({ "item.description": { $regex: /line$/i } });   //'$' indica si termina en el valor de '//'.
+// db.inventory.find({ "item.description": { $regex: /^Single/i } });  //'^' Indica si empieza en el valor dentro de '//'
+db.inventory.find({ "item.description": { $regex: /^s/im } });  //'m' tiene en cuenta todos los valores a buscar aun si hay salto de linea

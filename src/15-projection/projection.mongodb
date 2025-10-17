@@ -1,0 +1,13 @@
+use("sample_training");
+
+// db.trips.find(
+//   //Query
+//   { tripduration: { $gte: 500 } },      //Se indica una condicion a validar dentro del query
+//   //Projection
+//   { tripduration: 1, usertype: 1, _id: 0 }     //Se indica que valores quiero ver en la consulta
+// );
+
+db.trips.find(
+  { tripduration: { $gte: 200 } },    //Condicion a validar dentro del query
+  { tripduration: 1, "start station name": 1, "end station name": 1, _id: 0 }   //Valores que quiero ver dentro de la consulta
+)

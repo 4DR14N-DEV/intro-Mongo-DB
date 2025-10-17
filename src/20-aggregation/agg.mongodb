@@ -1,0 +1,22 @@
+use("sample_airbnb");
+
+//Aggregation Frameworks = El Aggregation Framework de MongoDB es una herramienta para procesar datos que utiliza una canalización (pipeline) de varias etapas para transformar documentos de una colección. Cada etapa realiza una operación como filtrar, agrupar, ordenar, o remodelar los documentos que pasan por ella, permitiendo realizar análisis complejos y consultas de agregación de manera eficiente directamente en el servidor.
+
+/*¿Que es pipeline?  == En resumido, quiere decir que funciona en capas ==
+Un "pipeline" en MongoDB es una serie de etapas o pasos que procesan documentos de una colección para realizar consultas complejas y transformaciones de datos. Cada etapa toma los documentos de la etapa anterior, realiza una operación sobre ellos (como filtrar, agrupar u ordenar), y pasa el resultado a la siguiente etapa, permitiendo análisis detallados y manipulación de datos en la propia base de datos*/
+
+
+// Ej: sin usar aggregation Framework
+// db.listingsAndReviews.find({
+//   amenities: "Wifi"
+// }, {
+//   price: 1,
+//   amenities: 1
+// });
+
+//Ej: con aggregation Framework
+db.listingsAndReviews.aggregate([
+  { $match: { amenities: "Wifi" } },          //find
+  { $project: { address: 1 } },               //project
+  { $group: { _id: "$address.country", count: { $sum: 1 } } }
+]);

@@ -1,0 +1,8 @@
+use("rr_store");
+
+/*En MongoDB, skip() es el método que omite un número especificado de documentos al principio de un resultado de consulta, mientras que offset es el término general para el número de documentos a omitir. Se usan a menudo juntos con limit() para implementar la paginación, permitiendo mostrar resultados en páginas, donde cada página omite los documentos de las páginas anteriores*/
+
+db.categories
+  .find()
+  .skip(3)            //.skip() -> Funciona como 'salto de pagina', segun el indice que haya en .limit(). en este caso, saltaria a la pagina siguiente mostrando los siguientes dos documentos (indice de .limit( -> 2 <-))
+  .limit(2)

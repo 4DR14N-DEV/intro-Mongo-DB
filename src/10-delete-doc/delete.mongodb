@@ -1,0 +1,7 @@
+use("jj_store")
+
+db.products.deleteOne({ _id: 1 });      //Metodo para eliminar un elemento
+
+db.products.deleteMany({ price: 100 });  //Metodo para eliminar varios elementos
+
+db.products.drop()      //Metodo para eliminar todos los elementos de la collection/db

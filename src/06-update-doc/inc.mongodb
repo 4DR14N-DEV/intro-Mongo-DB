@@ -1,0 +1,10 @@
+use("Adrian_store");
+
+db.products.updateOne(
+  { _id: 2 },                //Query indicador del atributo a modificar
+  {
+    $inc: {                 //Operador para incrementar valores
+      price: 500000
+    }
+  }
+);

@@ -1,0 +1,3 @@
+use("jj_store")
+
+db.products.find()

@@ -1,0 +1,12 @@
+use("sample_training");
+
+db.zips.updateMany(
+
+  { city: "CLEVELAND" },               //Query principal, o seleccionador de atributo
+
+  {
+    $set: {                            //Operador para modificar o añadir
+      myAttr: "Hola"
+    }
+  }
+)

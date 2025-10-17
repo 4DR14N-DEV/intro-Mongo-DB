@@ -1,0 +1,12 @@
+use("Adrian_store");
+
+db.products.updateOne(
+  { _id: 2 },                //Query indicador del atributo a modificar
+  {
+    $set: {                 //Operador para cambiar valores
+      name: "Monitor QLED",
+      price: 3500000,
+      tags: ["A", "B", "C"]
+    }
+  }
+);

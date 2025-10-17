@@ -1,0 +1,31 @@
+use("Adrian_store");           //Drop vacia toda la coleccion - elimina todos los datos
+
+db.products.insertMany([
+  {
+    _id: 6,
+    name: "Board Mono Space",
+    price: "400.000"
+  },
+  {
+    _id: 7,
+    name: "Teclado RGB Ultra",
+    price: "550.000"
+  },
+  {
+    _id: 8,
+    name: "Red Magic Nubia 7 Pro",
+    price: "4'500.000"
+  },
+  {
+    _id: 9,
+    name: "PS5 Limited Edition",
+    price: "3'500.000"
+  },
+  {
+    _id: 10,
+    name: "Controls PS5 Battlefield Edition",
+    price: "1'200.000"
+  },
+]);
+
+db.products.find();

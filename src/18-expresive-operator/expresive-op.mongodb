@@ -1,0 +1,11 @@
+use("p_store")
+
+// db.monthlyBudget.find({ spent: { $gte: 100 } });
+
+// $expr (Expresive operator) permite utilizar expresiones de agregación dentro de las operaciones de consulta, como $match. Esto posibilita comparar campos del mismo documento, realizar cálculos con múltiples campos y utilizar otros operadores de agregación directamente en las consultas de búsqueda, lo cual no es posible con los operadores de consulta tradicionales. 
+db.monthlyBudget.find({
+  $expr: {                       //Se indica expresive operator
+    $gte: ["$spent", "$budget"]        //Se indica el operador ($gte) indice 0 = Se especifica con ($) para indicar el campo en especifico, indice 1 = Se indica el valor que se quiere comparar usando ($)
+  }
+});
+

@@ -1,0 +1,17 @@
+use("platzi_store");
+
+db.inventory.updateMany({}, {        //Seleccion indice del array/items... En este caso vacio/selecciona todos los elementos
+
+  $pull: {                               //Operador de eliminacion para arrays
+    tags: "book"
+  }
+});
+
+db.inventory.updateMany({}, {        //Seleccion indice del array/items... En este caso vacio/selecciona todos los elementos
+
+  $pull: {                               //Operador de eliminacion para arrays
+    tags: {                              //Seleccion de varios elementos a eliminar
+      $in: ["appliance", "school"]       //Array de elementos seleccionados a eliminar
+    }
+  }
+});

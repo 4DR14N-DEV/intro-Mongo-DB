@@ -1,0 +1,10 @@
+use("ar_store");
+
+db.iot.updateOne({
+  sensor: "A001",
+  date: "2022-01-03",
+}, {
+  $pop: {                           //Operador de eliminar elementos al principo o al final
+    readings: 1
+  }
+});

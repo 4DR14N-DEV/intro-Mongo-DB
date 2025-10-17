@@ -1,0 +1,11 @@
+use("sample_training");
+
+// Estructura para usar Expressive operator ($expr) con multiples operadores logicos ¡¡Lvl avanzado!!
+db.trips.find({
+  $expr: {
+    $and: [
+      { $eq: ["$start station id", "$end station id"] },
+      { $gt: ["$tripduration", 500] },
+    ]
+  }
+}).count();

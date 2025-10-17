@@ -1,0 +1,28 @@
+use("ll_store");
+
+// $in, values & arrays               //Para buscar dentro de un array
+// db.inventory.find({ qty: { $in: [20, 25] } });
+// db.inventory.find({ tags: { $in: ["book", "electronics"] } });
+
+
+// $nin, values & arrays             //Para buscar elemtos que no esten dentro del array (segun la condicion).
+// db.inventory.find({ qty: { $nin: [20, 25] } });
+// db.inventory.find({ tags: { $nin: ["book", "electronics"] } });
+
+
+// Arrays - $all
+// db.inventory.find({ tags: { $all: ["book", "school"] } });    //Operador para buscar sin importar el indice del elemento dentro del array
+
+// $size
+// db.inventory.find({ tags: { $size: 2 } });              //Operador para buscar por numero especifico de elementos del array
+
+// #elemMatch                   //operador de consulta que se utiliza para buscar documentos que contienen un campo de tipo arreglo con al menos un elemento que satisface todos los criterios de búsqueda especificados
+db.survey.find({
+  results: {
+    $elemMatch: {
+      product: "xyz",
+      score: { $gte: 7 }
+    }
+  }
+});
+

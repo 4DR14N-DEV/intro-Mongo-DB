@@ -1,0 +1,11 @@
+use("pp_store");
+
+//Use $eq         //Eq (equal) viene implicito
+//db.inventory.find({ qty: 20 });                  //Eq de forma implicita
+//db.inventory.find({ qty: { $eq: 20 } });         //Eq de forma explicita
+//db.inventory.find({ "item.name": "ab" });          //Hacer consulta en subdocumentos
+//db.inventory.find({ "item.name": { $eq: "ab" } });  //Eq de forma explicita
+
+
+//Use $ne         //Ne (NoEqual) debe ser usado explicitamente
+db.inventory.find({ qty: { $ne: 20 } });    //El uso de $ne SI debe ser explicito 

@@ -1,0 +1,12 @@
+use("sample_training");
+
+db.zips.updateMany(
+
+  { city: "CLEVELAND" },               //Query principal, o seleccionador de atributo
+
+  {
+    $unset: {                            //Operador para eliminar atributos
+      My_data: ""
+    }
+  }
+);

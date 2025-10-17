@@ -1,0 +1,3 @@
+use("Adrian_store");
+
+db.products.find();

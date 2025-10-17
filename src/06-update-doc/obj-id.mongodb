@@ -1,0 +1,12 @@
+use("Adrian_store");
+
+db.products.updateOne(
+
+  { _id: ObjectId("68efc9df51c8c4036c1ddbc8") },        //Seleccion de Id autogenerado por mongo
+
+  {
+    $inc: {                                            //Actualizacion de precio o incremento
+      price: 10500000
+    }
+  }
+);

@@ -1,0 +1,8 @@
+use("platzi_store");
+
+db.inventory.updateOne({ _id: 4 }, {        //Seleccion indice del array/items
+
+  $push: {                               //Operador de agregacion para arrays
+    tags: "headphone"
+  }
+});

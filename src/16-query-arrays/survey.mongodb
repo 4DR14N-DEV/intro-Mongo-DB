@@ -1,0 +1,3 @@
+use("ll_store");
+
+db.survey.find();

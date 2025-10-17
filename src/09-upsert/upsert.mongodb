@@ -1,0 +1,12 @@
+use("ar_store");
+
+db.iot.updateOne({
+  sensor: "A001",
+  date: "2022-01-04",
+}, {
+  $push: {
+    readings: 12345
+  }
+}, {
+  upsert: true           //Operador para actualizar o insertar en caso de que no haya sido creado el elemento
+});
